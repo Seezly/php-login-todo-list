@@ -18,26 +18,21 @@
         <title>PHP Login CRUD</title>
     </head>
 
-    <body>
+    <body class="yellow darken-1 grey-text text-darken-4">
 
         <main class="container">
-
-            <nav>
-                <div class="nav-wrapper">
-                    <a href="#" class="brand-logo">PHP LOGIN CRUD</a>
-                    <ul id="nav-mobile" class="right hide-on-med-and-down">
-                        <li><a href="sass.html">Sass</a></li>
-                        <li><a href="badges.html">Components</a></li>
-                        <li><a href="collapsible.html">JavaScript</a></li>
-                    </ul>
-                </div>
-            </nav>
 
             <section class="row">
                 <div class="col s-12">
                     <h1>PHP Login CRUD (another bored to-do list but with a register and login features)</h1>
-                    <a href="register.php" class="waves-effect waves-light btn-large">Sign Up</a>
-                    <a href="login" class="waves-effect waves-light btn-large">Log In</a>
+                </div>
+            </section>
+            <section style="margin-top: 10em" class="row">
+                <div class="col s4 offset-s1">
+                    <a href="register.php" style="width: 100%" class="waves-effect waves-light btn-large z-depth-2 yellow darken-4 grey-text text-darken-4">Sign Up</a>
+                </div>
+                <div class="col s4 offset-s2">
+                    <a href="login.php" style="width: 100%" class="waves-effect waves-light btn-large z-depth-2 yellow darken-4 grey-text text-darken-4">Log In</a>
                 </div>
             </section>
         
@@ -45,6 +40,15 @@
 
         <!-- Compiled and minified JavaScript -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+        <script>
+        
+            document.addEventListener('DOMContentLoaded', function() {
+                const elems = document.querySelectorAll('.sidenav');
+                const instances = M.Sidenav.init(elems, options);
+            });
+
+        </script>
 
     </body>
 
