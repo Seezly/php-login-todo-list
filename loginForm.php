@@ -1,17 +1,3 @@
-<?php
-
-    session_start();
-    
-    if(!isset($_SESSION["loggedIn"]) || $_SESSION["loggedIn"] !== true){
-        header("location: login.php");
-        exit();
-    } else {
-        require 'db_connection.php';
-        require 'login.php';
-    }
-
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -24,7 +10,7 @@
         <!-- Compiled and minified CSS -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-        <title>PHP Login Crud | Dashboard</title>
+        <title>PHP Login Crud | Login</title>
     
     </head>
     
@@ -35,31 +21,31 @@
             <section class="row">
 
                 <div class="col s-12">
-                    <h1>Welcome to your Dashboard, <?php echo $_SESSION['username'] ?></h1>
+                    <h1>Login form</h1>
                 </div>
 
             </section>
-
-            <?php
-                
-                    $stmt = $conn->prepare('SELECT * FROM todos WHERE user_id=? ORDER BY id DESC');
-                    $todos = $stmt->execute($_SESSION['id']);
-                
-            ?>
 
             <section class="row">
+            
+                <div class="col s6 offset-s3">
+                    <form action="./login.php" method="post">
 
-                <div class="col s4">
-                </div>
-                <div class="col s7 offset-s1">
-                    <div class="col s4">
-                    </div>
-                </div>
+                        <label for="username">Username*</label>
+                        <br>
+                        <input type="text" id="username" name="username" required>
+                        <br>
+                        <label for="password">Password*</label>
+                        <br>
+                        <input type="password" id="password" name="password" required>
+                        <br>
+                        <button type="submit" style="width: 100%" class="waves-effect waves-light btn-large z-depth-2">Log In</button>
 
-            </section>
+                    </form>
+                </div>
             
             </section>
-
+            
         </main>
 
     </body>
