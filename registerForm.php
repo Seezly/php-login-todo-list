@@ -1,3 +1,14 @@
+<?php
+
+    session_start();
+    
+    if(isset($_SESSION["loggedIn"]) && $_SESSION["loggedIn"] === true){
+        header("Location: dashboard.php");
+        exit();
+    }
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -47,7 +58,8 @@
                         <br>
                         <input type="password" id="check-password" name="check-password" required>
                         <br>
-                        <button type="submit" style="width: 100%" class="waves-effect waves-light btn-large z-depth-2">Sign Up</button>
+                        <button type="submit" style="width: 100%" class="waves-effect waves-light btn-large z-depth-2 yellow darken-4 grey-text text-darken-4">Sign Up</button>
+                        <small>or <a href="./loginForm.php" class="yellow-text text-darken-4">log in</a>.</small>
 
                     </form>
                 </div>

@@ -9,13 +9,13 @@
 
     if (isset($_POST['username']) && isset($_POST['password'])) {
         require 'db_connection.php';
-        include 'register.php';
 
         $username = $_POST['username'];
+        $password = $_POST['password'];
 
         $stmt = $conn->prepare("SELECT id, username, password FROM users WHERE username=?");
         
-        if ($stmt->execute($username)) {
+        if ($stmt->execute([$username])) {
             if($stmt->rowCount() == 1){
                 if($row = $stmt->fetch()){
                     $id = $row["id"];
@@ -24,7 +24,7 @@
                     if(password_verify($password, $hashed_password)){
                         session_start();
                         
-                        $_SESSION["loggedin"] = true;
+                        $_SESSION["loggedIn"] = true;
                         $_SESSION["id"] = $id;
                         $_SESSION["username"] = $username;                            
                         
@@ -32,7 +32,7 @@
                     }
                 }
             }
-        }    
+        }
 
         $conn = null;
         exit();

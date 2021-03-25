@@ -1,9 +1,3 @@
-<?php 
-
-    require 'db_connection.php';
-
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -29,10 +23,10 @@
             </section>
             <section style="margin-top: 10em" class="row">
                 <div class="col s4 offset-s1">
-                    <a href="register.php" style="width: 100%" class="waves-effect waves-light btn-large z-depth-2 yellow darken-4 grey-text text-darken-4">Sign Up</a>
+                    <a href="registerForm.php" style="width: 100%" class="waves-effect waves-light btn-large z-depth-2 yellow darken-4 grey-text text-darken-4">Sign Up</a>
                 </div>
                 <div class="col s4 offset-s2">
-                    <a href="login.php" style="width: 100%" class="waves-effect waves-light btn-large z-depth-2 yellow darken-4 grey-text text-darken-4">Log In</a>
+                    <a href="loginForm.php" style="width: 100%" class="waves-effect waves-light btn-large z-depth-2 yellow darken-4 grey-text text-darken-4">Log In</a>
                 </div>
             </section>
         
@@ -40,15 +34,6 @@
 
         <!-- Compiled and minified JavaScript -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-
-        <script>
-        
-            document.addEventListener('DOMContentLoaded', function() {
-                const elems = document.querySelectorAll('.sidenav');
-                const instances = M.Sidenav.init(elems, options);
-            });
-
-        </script>
 
     </body>
 
